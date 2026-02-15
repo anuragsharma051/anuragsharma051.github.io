@@ -64,12 +64,12 @@ section h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
 
 /* Each line of skills */
 .skill-line {
-  margin-bottom: 40px;
+  margin-bottom: 70px;
 }
 
 /* Label */
 .skill-line p strong {
-  font-size: 1.15em;
+  font-size: 1.2em;
   display: block;
   margin-bottom: 10px;
 }
