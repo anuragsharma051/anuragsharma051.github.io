@@ -50,64 +50,53 @@ section h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
 .project-card { background: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
 .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  justify-content: center;
-  gap: 50px;
-  margin-top: 30px;
+#skills {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 20px;
 }
 
-.skill-item {
+#skills h2 {
   text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
 }
 
-.skill-item p {
-  margin-bottom: 10px;  /* space between label and icons */
-  font-weight: bold;
+/* Each line of skills */
+.skill-line {
+  margin-bottom: 30px;
+}
+
+/* Label */
+.skill-line p strong {
   font-size: 1.1em;
+  display: block;
+  margin-bottom: 10px;
 }
 
-/* Each skill group uses flexbox for icons */
-.icon-row {
+/* Icons row */
+.icons-row {
   display: flex;
-  justify-content: center;   /* center icons */
-  gap: 15px;                 /* spacing between icons */
-  flex-wrap: wrap;           /* wrap if too many icons */
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.icon-row img {
-  height: 100px;             /* max icon size */
-  width: auto;               /* maintain aspect ratio */
+.icons-row img {
+  height: 100px;  /* large and clear */
+  width: auto;
   transition: transform 0.3s;
 }
 
-.icon-row img:hover {
-  transform: scale(1.2);
+.icons-row img:hover {
+  transform: scale(1.15);
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .icon-row img {
-    height: 80px;
-  }
-}
-
 @media (max-width: 768px) {
-  .icon-row img {
-    height: 60px;
-  }
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
-  }
-  .skill-item img {
-    width: 80px;
-    height: 80px;
+  .icons-row img {
+    height: 70px;
   }
 }
 
