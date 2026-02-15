@@ -67,8 +67,8 @@ section h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
 }
 
 .skill-item img {
-  width: 80px;   /* bigger icon size */
-  height: 80px;
+  width: 120px;   /* bigger icon size */
+  height: 120px;
   transition: transform 0.3s;
 }
 
