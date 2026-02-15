@@ -53,21 +53,19 @@ section h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
 /* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* ensures bigger icons on desktop */
-  gap: 30px;
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, 200px); /* FIXED 200px per item */
+  justify-content: center; /* center the grid on wide screens */
+  gap: 40px;
   margin-top: 30px;
 }
 
 .skill-item {
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: default;
+  transition: transform 0.3s;
 }
 
 .skill-item img {
-  width: 120px;   /* bigger icon size */
+  width: 120px;   /* BIG icons */
   height: 120px;
   transition: transform 0.3s;
 }
@@ -75,7 +73,33 @@ section h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
 .skill-item p {
   margin-top: 10px;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.1em;
+}
+
+/* Hover effect */
+.skill-item:hover img {
+  transform: scale(1.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, 150px);
+  }
+  .skill-item img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, 120px);
+  }
+  .skill-item img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 /* Hover effect */
@@ -92,11 +116,6 @@ section h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
   .skills-grid {
     gap: 20px;
   }
-}
-
-/* Hover effect */
-.skill-item:hover img {
-  transform: scale(1.2);
 }
 
 body.dark-mode .skill-item p {
