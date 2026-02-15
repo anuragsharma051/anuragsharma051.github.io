@@ -50,47 +50,52 @@ section h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
 .project-card { background: var(--card-bg); padding: 20px; border-radius: 10px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
 .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
 
-/* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* fixed minimum for large icons */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   justify-content: center;
-  gap: 50px; /* more spacing for bigger icons */
+  gap: 50px;
   margin-top: 30px;
 }
 
 .skill-item {
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: default;
-}
-
-.skill-item img {
-  width: 120px;    /* large and crisp */
-  height: 120px;
-  transition: transform 0.3s;
 }
 
 .skill-item p {
-  margin-top: 10px;
+  margin-bottom: 10px;  /* space between label and icons */
   font-weight: bold;
   font-size: 1.1em;
 }
 
-/* Hover effect */
-.skill-item:hover img {
+/* Each skill group uses flexbox for icons */
+.icon-row {
+  display: flex;
+  justify-content: center;   /* center icons */
+  gap: 15px;                 /* spacing between icons */
+  flex-wrap: wrap;           /* wrap if too many icons */
+}
+
+.icon-row img {
+  height: 100px;             /* max icon size */
+  width: auto;               /* maintain aspect ratio */
+  transition: transform 0.3s;
+}
+
+.icon-row img:hover {
   transform: scale(1.2);
 }
 
-/* Responsive for tablets */
+/* Responsive */
 @media (max-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 30px;
+  .icon-row img {
+    height: 80px;
   }
-  .skill-item img {
-    width: 100px;
-    height: 100px;
+}
+
+@media (max-width: 768px) {
+  .icon-row img {
+    height: 60px;
   }
 }
 
@@ -103,17 +108,6 @@ section h2 { font-size: 2em; margin-bottom: 25px; text-align: center; }
   .skill-item img {
     width: 80px;
     height: 80px;
-  }
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
-  .skill-item img {
-    width: 60px;
-    height: 60px;
-  }
-  .skills-grid {
-    gap: 20px;
   }
 }
 
